@@ -111,10 +111,12 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:pb-20">
-        <h3 className="text-sm tracking-[0.2em] text-ink-foreground">Find Us</h3>
-        <div className="mt-5">
-          <LocationMap />
+      <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:pb-20 lg:flex lg:justify-end">
+        <div className="w-full max-w-[400px]">
+          <h3 className="text-sm tracking-[0.2em] text-ink-foreground">Find Us</h3>
+          <div className="mt-4">
+            <LocationMap />
+          </div>
         </div>
       </div>
 
