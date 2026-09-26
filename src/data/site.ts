@@ -10,21 +10,17 @@ export const site = {
   tagline: "Premium RC Racing Experience",
   description:
     "Race high-performance RC cars on purpose-built tracks at RC 9. Book your racing experience, birthday party, corporate event or group session.",
-  phone: "+91 00000 00000", // placeholder
-  whatsapp: "+910000000000", // placeholder, digits only
-  email: "hello@rc9.example", // placeholder
+  phone: "+91 92811 98811",
+  whatsapp: "919281198811",
+  email: "rc9gamingzoneandcafe@gmail.com",
   address: {
     line1: "RC 9 Gaming Zone & Cafe",
-    line2: "Street address, Area",
-    city: "City",
-    postcode: "000000",
+    line2: "Panchasheel Enclave, Road No. 1, HT Road, Alwal",
+    city: "Hyderabad",
+    postcode: "",
   },
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=RC+9+gaming+zone",
-  hours: [
-    { days: "Monday – Thursday", time: "11:00 – 22:00" },
-    { days: "Friday – Saturday", time: "10:00 – 23:30" },
-    { days: "Sunday", time: "10:00 – 22:00" },
-  ],
+  mapsUrl: "https://maps.app.goo.gl/BGstVFCquSAFzJB9A?g_st=aw",
+  hours: [{ days: "Monday – Sunday", time: "11:00 AM – 11:00 PM" }],
   parking: "Free on-site parking for cars and two-wheelers.",
   social: {
     instagram: "https://instagram.com",
