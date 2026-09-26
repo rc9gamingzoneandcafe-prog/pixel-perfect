@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Youtube, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
+import { LocationMap } from "./LocationMap";
 import { site, whatsappLink, telLink } from "@/data/site";
 
 const pages = [
@@ -19,7 +20,7 @@ export function Footer() {
   return (
     <footer className="surface-ink">
       <div className="h-0.5 w-full racing-stripe" aria-hidden="true" />
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-4 lg:py-20">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-12 pt-16 sm:px-6 lg:grid-cols-4 lg:pt-20">
         <div className="lg:col-span-2">
           <Logo tone="dark" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-muted">
@@ -107,6 +108,13 @@ export function Footer() {
               </span>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:pb-20">
+        <h3 className="text-sm tracking-[0.2em] text-ink-foreground">Find Us</h3>
+        <div className="mt-5">
+          <LocationMap />
         </div>
       </div>
 
