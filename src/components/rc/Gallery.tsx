@@ -85,8 +85,8 @@ export function Gallery({ limit }: { limit?: number }) {
             <ChevronRight className="size-5" />
           </button>
           <img
-            src={images[active].src}
-            alt={images[active].alt}
+            src={images[active]!.src}
+            alt={images[active]!.alt}
             onClick={(e) => e.stopPropagation()}
             className="max-h-[85vh] max-w-full rounded-sm object-contain shadow-lift"
           />

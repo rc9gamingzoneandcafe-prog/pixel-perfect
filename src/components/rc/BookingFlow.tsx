@@ -49,14 +49,14 @@ function nextDays(count: number) {
   return out;
 }
 
-export function BookingFlow({ initialPlan }: { initialPlan?: string }) {
+export function BookingFlow({ initialPlan }: { initialPlan?: string | undefined }) {
   const [step, setStep] = useState(0);
   const [reference, setReference] = useState<string | null>(null);
   const [draft, setDraft] = useState<BookingDraft>({
-    experience: experiences[0].name,
+    experience: experiences[0]!.name,
     plan:
       plans.find((p) => p.name.toLowerCase() === (initialPlan ?? "").toLowerCase())?.name ??
-      plans[1].name,
+      plans[1]!.name,
     date: "",
     time: "",
     players: 2,
