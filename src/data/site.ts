@@ -19,6 +19,8 @@ export const site = {
     city: "Hyderabad",
     postcode: "",
   },
+  /** Exact venue coordinates — resolved from the shared Google Maps link. */
+  mapCoords: { lat: 17.5136166, lng: 78.4921341 },
   mapsUrl: "https://maps.app.goo.gl/BGstVFCquSAFzJB9A?g_st=aw",
   hours: [{ days: "Monday – Sunday", time: "11:00 AM – 11:00 PM" }],
   parking: "Free on-site parking for cars and two-wheelers.",
