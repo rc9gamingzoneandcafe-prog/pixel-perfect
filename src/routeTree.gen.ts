@@ -17,6 +17,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CorporateEventsRouteImport } from './routes/corporate-events'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FranchiseRouteImport } from './routes/franchise'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as PricingRouteImport } from './routes/pricing'
 
@@ -60,6 +61,11 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FranchiseRoute = FranchiseRouteImport.update({
+  id: '/franchise',
+  path: '/franchise',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
@@ -80,6 +86,7 @@ export interface FileRoutesByFullPath {
   '/corporate-events': typeof CorporateEventsRoute
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
+  '/franchise': typeof FranchiseRoute
   '/gallery': typeof GalleryRoute
   '/pricing': typeof PricingRoute
 }
@@ -92,6 +99,7 @@ export interface FileRoutesByTo {
   '/corporate-events': typeof CorporateEventsRoute
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
+  '/franchise': typeof FranchiseRoute
   '/gallery': typeof GalleryRoute
   '/pricing': typeof PricingRoute
 }
@@ -105,6 +113,7 @@ export interface FileRoutesById {
   '/corporate-events': typeof CorporateEventsRoute
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
+  '/franchise': typeof FranchiseRoute
   '/gallery': typeof GalleryRoute
   '/pricing': typeof PricingRoute
 }
@@ -119,6 +128,7 @@ export interface FileRouteTypes {
     | '/corporate-events'
     | '/experiences'
     | '/faq'
+    | '/franchise'
     | '/gallery'
     | '/pricing'
   fileRoutesByTo: FileRoutesByTo
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/corporate-events'
     | '/experiences'
     | '/faq'
+    | '/franchise'
     | '/gallery'
     | '/pricing'
   id:
@@ -143,6 +154,7 @@ export interface FileRouteTypes {
     | '/corporate-events'
     | '/experiences'
     | '/faq'
+    | '/franchise'
     | '/gallery'
     | '/pricing'
   fileRoutesById: FileRoutesById
@@ -156,6 +168,7 @@ export interface RootRouteChildren {
   CorporateEventsRoute: typeof CorporateEventsRoute
   ExperiencesRoute: typeof ExperiencesRoute
   FaqRoute: typeof FaqRoute
+  FranchiseRoute: typeof FranchiseRoute
   GalleryRoute: typeof GalleryRoute
   PricingRoute: typeof PricingRoute
 }
@@ -218,6 +231,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/franchise': {
+      id: '/franchise'
+      path: '/franchise'
+      fullPath: '/franchise'
+      preLoaderRoute: typeof FranchiseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
@@ -244,6 +264,7 @@ const rootRouteChildren: RootRouteChildren = {
   CorporateEventsRoute: CorporateEventsRoute,
   ExperiencesRoute: ExperiencesRoute,
   FaqRoute: FaqRoute,
+  FranchiseRoute: FranchiseRoute,
   GalleryRoute: GalleryRoute,
   PricingRoute: PricingRoute,
 }

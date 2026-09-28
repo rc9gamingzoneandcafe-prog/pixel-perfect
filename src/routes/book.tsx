@@ -14,16 +14,16 @@ export const Route = createFileRoute("/book")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  validateSearch: z.object({ plan: z.string().optional() }),
+  validateSearch: z.object({ plan: z.string().optional(), experience: z.string().optional() }),
   component: BookPage,
 });
 
 function BookPage() {
-  const { plan } = Route.useSearch();
+  const { plan, experience } = Route.useSearch();
   return (
     <>
       <PageHeader eyebrow="Booking" title="Book your race" subtitle="Pick your track, session and slot. We'll confirm on WhatsApp." />
-      <Section><BookingFlow initialPlan={plan} /></Section>
+      <Section><BookingFlow initialPlan={plan} initialExperience={experience} /></Section>
     </>
   );
 }

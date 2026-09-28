@@ -49,11 +49,17 @@ function nextDays(count: number) {
   return out;
 }
 
-export function BookingFlow({ initialPlan }: { initialPlan?: string | undefined }) {
+export function BookingFlow({
+  initialPlan,
+  initialExperience,
+}: {
+  initialPlan?: string | undefined;
+  initialExperience?: string | undefined;
+}) {
   const [step, setStep] = useState(0);
   const [reference, setReference] = useState<string | null>(null);
   const [draft, setDraft] = useState<BookingDraft>({
-    experience: experiences[0]!.name,
+    experience: (experiences.find((e) => e.slug === initialExperience) ?? experiences[0]!).name,
     plan:
       plans.find((p) => p.name.toLowerCase() === (initialPlan ?? "").toLowerCase())?.name ??
       plans[1]!.name,
@@ -171,7 +177,13 @@ export function BookingFlow({ initialPlan }: { initialPlan?: string | undefined 
                       <span className="block font-display text-lg font-semibold uppercase text-foreground">
                         {e.name}
                       </span>
-                      <span className="text-xs text-muted-foreground">{e.duration}</span>
+                      <span className="block text-xs text-muted-foreground">
+                        {e.prices.length
+                          ? e.prices
+                              .map((t) => `${t.duration} — ${t.options.map((o) => `${o.label}: ${o.price}`).join(", ")}`)
+                              .join(" · ")
+                          : `${e.duration} · ${e.from}`}
+                      </span>
                     </span>
                   </button>
                 ))}

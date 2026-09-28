@@ -13,6 +13,7 @@ const links = [
   { to: "/gallery", label: "Gallery" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
+  { to: "/franchise", label: "Franchise" },
 ] as const;
 
 export function Navbar() {

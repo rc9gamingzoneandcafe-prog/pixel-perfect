@@ -42,8 +42,8 @@ function IndexPage() {
         </div>
       </section>
       <Section>
-        <SectionHeading eyebrow="Track Experiences" title="Four ways to race" subtitle="From flat-out pace to technical rock crawling." />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionHeading eyebrow="Track Experiences" title="Five ways to race" subtitle="From flat-out pace to simulator laps." />
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {experiences.map((e) => <ExperienceCard key={e.slug} exp={e} />)}
         </div>
       </Section>

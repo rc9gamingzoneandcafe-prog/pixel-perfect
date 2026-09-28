@@ -35,11 +35,16 @@ export const whatsappLink = `https://wa.me/${site.whatsapp.replace(/\D/g, "")}`;
 export const telLink = `tel:${site.phone.replace(/\s/g, "")}`;
 
 export const stats = [
-  { value: 4, suffix: "+", label: "Track Experiences" },
+  { value: 5, suffix: "", label: "Experiences" },
   { value: 30, suffix: "+", label: "RC Cars" },
   { value: 60, suffix: " min", label: "Maximum Session" },
   { value: 100, suffix: "%", label: "Adrenaline" },
 ];
+
+/** One price line, e.g. { label: "2 Persons", price: "₹99 / person" }. */
+export type PriceOption = { label: string; price: string };
+/** Prices for one session length, e.g. 30 MIN. */
+export type PriceTier = { duration: string; options: PriceOption[] };
 
 export type Experience = {
   slug: string;
@@ -47,60 +52,126 @@ export type Experience = {
   short: string;
   description: string;
   duration: string;
+  /** Headline price shown on cards. */
   from: string;
+  /** Full price list — the single source of truth for experience pricing. Empty = not yet published. */
+  prices: PriceTier[];
   image: string;
   highlights: string[];
 };
 
 import highSpeedImg from "@/assets/exp-highspeed.jpg";
-import offRoadImg from "@/assets/exp-offroad.jpg";
+import constructionImg from "@/assets/exp-construction.jpg";
 import crawlerImg from "@/assets/exp-crawler.jpg";
 import driftImg from "@/assets/exp-drift.jpg";
+import simulatorImg from "@/assets/exp-simulator.jpg";
+
+/** Shown wherever an experience has no published price yet. */
+export const PRICE_TBA = "Ask at venue";
 
 export const experiences: Experience[] = [
   {
-    slug: "high-speed",
-    name: "High Speed",
-    short: "High-speed racing designed for speed and precision.",
+    slug: "re-construction",
+    name: "Re Construction",
+    short: "Dig, load and haul with scale RC construction machines.",
     description:
-      "Our fastest on-road layout. Long straights, tight chicanes and a timing system that shows every hundredth of a second. Built for racers who want pace.",
-    duration: "15 – 60 min",
-    from: "₹XXX",
-    image: highSpeedImg,
-    highlights: ["Timed laps", "On-road touring cars", "Race-line coaching"],
-  },
-  {
-    slug: "off-road",
-    name: "Off-Road",
-    short: "Conquer rough terrain, jumps and obstacles.",
-    description:
-      "Dirt, berms, doubles and table-tops. Off-road buggies with real suspension travel and a track that rewards commitment through the air.",
-    duration: "15 – 60 min",
-    from: "₹XXX",
-    image: offRoadImg,
-    highlights: ["Jumps & berms", "4WD buggies", "Great for first-timers"],
+      "Take the controls of radio-controlled construction machines on a miniature work site. Dig, load and move material with precision and teamwork.",
+    duration: "15 – 30 min",
+    from: "₹59",
+    prices: [
+      {
+        duration: "30 min",
+        options: [
+          { label: "1 Person", price: "₹199" },
+          { label: "2 Persons", price: "₹99 / person" },
+        ],
+      },
+      {
+        duration: "15 min",
+        options: [
+          { label: "1 Person", price: "₹59" },
+          { label: "2 Persons", price: "₹149" },
+        ],
+      },
+    ],
+    image: constructionImg,
+    highlights: ["Scale construction machines", "Miniature work site", "Great for first-timers"],
   },
   {
     slug: "crawler",
-    name: "Crawler",
+    name: "RC Crawler",
     short: "Technical driving that rewards control and patience.",
     description:
       "A boulder course where throttle control beats raw speed. Articulated crawlers, steep climbs and lines you have to read before you drive them.",
-    duration: "20 – 60 min",
-    from: "₹XXX",
+    duration: "15 – 30 min",
+    from: "₹99",
+    prices: [
+      {
+        duration: "30 min",
+        options: [
+          { label: "1 Person", price: "₹149" },
+          { label: "2 Persons", price: "₹299" },
+        ],
+      },
+      {
+        duration: "15 min",
+        options: [
+          { label: "1 Person", price: "₹99" },
+          { label: "2 Persons", price: "₹149" },
+        ],
+      },
+    ],
     image: crawlerImg,
     highlights: ["Rock course", "Scale crawlers", "Skill-based challenges"],
   },
   {
+    slug: "high-speed",
+    name: "RC High Speed",
+    short: "High-speed racing designed for speed and precision.",
+    description:
+      "Our fastest on-road layout. Long straights, tight chicanes and a timing system that shows every hundredth of a second. Built for racers who want pace.",
+    duration: "15 – 60 min",
+    from: PRICE_TBA,
+    prices: [],
+    image: highSpeedImg,
+    highlights: ["Timed laps", "On-road touring cars", "Race-line coaching"],
+  },
+  {
     slug: "drift",
-    name: "Drift",
+    name: "RC Drift",
     short: "Master corners, slides and precision driving.",
     description:
       "A polished drift pad lit in blue and red. Learn counter-steer, link corners and chase style points with our instructors alongside you.",
-    duration: "15 – 45 min",
-    from: "₹XXX",
+    duration: "15 min",
+    from: "₹99",
+    prices: [
+      {
+        duration: "15 min",
+        options: [
+          { label: "1 Person", price: "₹99" },
+          { label: "2 Persons", price: "₹149" },
+        ],
+      },
+    ],
     image: driftImg,
     highlights: ["Drift pad", "RWD drift chassis", "Tandem runs"],
+  },
+  {
+    slug: "simulator",
+    name: "Racing Simulator Cockpit",
+    short: "Strap into a full racing cockpit and chase the perfect lap.",
+    description:
+      "Settle into a racing seat with a steering wheel and pedals in front of immersive screens. Feel what it's like to drive a real race car, lap after lap.",
+    duration: "30 min",
+    from: "₹199",
+    prices: [
+      {
+        duration: "30 min",
+        options: [{ label: "Per person", price: "₹199 / person" }],
+      },
+    ],
+    image: simulatorImg,
+    highlights: ["Racing seat cockpit", "Steering wheel & pedals", "Immersive screens"],
   },
 ];
 
@@ -214,11 +285,11 @@ export const occasions = [
 export type LapRecord = { position: number; racer: string; time: string; track: string };
 
 export const leaderboard: LapRecord[] = [
-  { position: 1, racer: "Racer Name", time: "24.82s", track: "High Speed" },
-  { position: 2, racer: "Racer Name", time: "25.14s", track: "High Speed" },
-  { position: 3, racer: "Racer Name", time: "25.91s", track: "High Speed" },
-  { position: 4, racer: "Racer Name", time: "26.40s", track: "Off-Road" },
-  { position: 5, racer: "Racer Name", time: "26.88s", track: "Off-Road" },
+  { position: 1, racer: "Racer Name", time: "24.82s", track: "RC High Speed" },
+  { position: 2, racer: "Racer Name", time: "25.14s", track: "RC High Speed" },
+  { position: 3, racer: "Racer Name", time: "25.91s", track: "RC High Speed" },
+  { position: 4, racer: "Racer Name", time: "26.40s", track: "RC Crawler" },
+  { position: 5, racer: "Racer Name", time: "26.88s", track: "RC Crawler" },
 ];
 
 export const testimonials = [
@@ -279,7 +350,7 @@ export const faqs = [
   },
   {
     q: "What should I wear?",
-    a: "Anything comfortable. Closed shoes are recommended, especially around the off-road track.",
+    a: "Anything comfortable. Closed shoes are recommended, especially around the tracks.",
   },
   {
     q: "Can I walk in without booking?",
