@@ -285,11 +285,11 @@ export const occasions = [
 export type LapRecord = { position: number; racer: string; time: string; track: string };
 
 export const leaderboard: LapRecord[] = [
-  { position: 1, racer: "Racer Name", time: "24.82s", track: "High Speed" },
-  { position: 2, racer: "Racer Name", time: "25.14s", track: "High Speed" },
-  { position: 3, racer: "Racer Name", time: "25.91s", track: "High Speed" },
-  { position: 4, racer: "Racer Name", time: "26.40s", track: "Off-Road" },
-  { position: 5, racer: "Racer Name", time: "26.88s", track: "Off-Road" },
+  { position: 1, racer: "Racer Name", time: "24.82s", track: "RC High Speed" },
+  { position: 2, racer: "Racer Name", time: "25.14s", track: "RC High Speed" },
+  { position: 3, racer: "Racer Name", time: "25.91s", track: "RC High Speed" },
+  { position: 4, racer: "Racer Name", time: "26.40s", track: "RC Crawler" },
+  { position: 5, racer: "Racer Name", time: "26.88s", track: "RC Crawler" },
 ];
 
 export const testimonials = [
@@ -350,7 +350,7 @@ export const faqs = [
   },
   {
     q: "What should I wear?",
-    a: "Anything comfortable. Closed shoes are recommended, especially around the off-road track.",
+    a: "Anything comfortable. Closed shoes are recommended, especially around the tracks.",
   },
   {
     q: "Can I walk in without booking?",
