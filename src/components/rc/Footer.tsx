@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook, Youtube, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Instagram, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
 import { LocationMap } from "./LocationMap";
-import { site, whatsappLink, telLink } from "@/data/site";
+import { site, whatsappLink, telLink, designer } from "@/data/site";
 
 const pages = [
   { to: "/", label: "Home" },
@@ -32,28 +32,10 @@ export function Footer() {
               href={site.social.instagram}
               aria-label="Instagram"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-ink-border text-ink-foreground transition-colors hover:border-primary hover:bg-primary"
             >
               <Instagram className="size-4" />
-            </a>
-            <a
-              href={site.social.facebook}
-              aria-label="Facebook"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-ink-border text-ink-foreground transition-colors hover:border-primary hover:bg-primary"
-            >
-              <Facebook className="size-4" />
-            </a>
-            <a
-              href={site.social.youtube}
-              aria-label="YouTube"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-ink-border text-ink-foreground transition-colors hover:border-primary hover:bg-primary"
-            >
-              <Youtube className="size-4" />
             </a>
           </div>
         </div>
@@ -121,8 +103,19 @@ export function Footer() {
       </div>
 
       <div className="border-t border-ink-border">
-        <div className="mx-auto max-w-7xl px-4 py-6 text-xs text-ink-muted sm:px-6">
-          © 2026 RC 9. All rights reserved.
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <span>© 2026 RC 9. All rights reserved.</span>
+          <span>
+            Designed by{" "}
+            <a
+              href={designer.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink-foreground/80 underline-offset-4 transition-colors hover:text-primary hover:underline"
+            >
+              {designer.name}
+            </a>
+          </span>
         </div>
       </div>
     </footer>
