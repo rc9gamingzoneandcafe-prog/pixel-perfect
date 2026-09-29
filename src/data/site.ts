@@ -72,7 +72,7 @@ export const PRICE_TBA = "Price to be updated";
 export const experiences: Experience[] = [
   {
     slug: "re-construction",
-    name: "Re Construction",
+    name: "RC Construction",
     short: "Dig, load and haul with scale RC construction machines.",
     description:
       "Take the controls of radio-controlled construction machines on a miniature work site. Dig, load and move material with precision and teamwork.",

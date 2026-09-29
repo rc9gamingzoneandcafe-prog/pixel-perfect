@@ -103,9 +103,9 @@ export function Footer() {
       </div>
 
       <div className="border-t border-ink-border">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div className="mx-auto grid max-w-7xl gap-2 px-4 py-6 text-xs text-ink-muted sm:grid-cols-3 sm:items-center sm:px-6">
           <span>© 2026 RC 9. All rights reserved.</span>
-          <span>
+          <span className="text-center">
             Designed by{" "}
             <a
               href={designer.url}
@@ -116,6 +116,7 @@ export function Footer() {
               {designer.name}
             </a>
           </span>
+          <span className="hidden sm:block" aria-hidden="true" />
         </div>
       </div>
     </footer>
