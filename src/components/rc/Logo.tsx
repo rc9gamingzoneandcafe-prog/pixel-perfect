@@ -1,24 +1,21 @@
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/rc9-logo.png.asset.json";
 
 export function Logo({ tone = "light", className }: { tone?: "light" | "dark"; className?: string }) {
   return (
     <Link
       to="/"
       aria-label="RC 9 — home"
-      className={cn("group inline-flex items-center gap-2.5", className)}
+      className={cn("inline-flex shrink-0 items-center rounded-sm bg-background p-1", className)}
     >
-      <span className="flex h-9 w-9 items-center justify-center rounded-sm racing-stripe shadow-card">
-        <span className="font-display text-lg font-bold leading-none text-primary-foreground">9</span>
-      </span>
-      <span
-        className={cn(
-          "font-display text-2xl font-bold leading-none tracking-[0.08em]",
-          tone === "dark" ? "text-ink-foreground" : "text-foreground",
-        )}
-      >
-        RC<span className="text-primary"> 9</span>
-      </span>
+      <img
+        src={logoAsset.url}
+        alt="RC 9 Gaming Café"
+        width={1254}
+        height={500}
+        className={cn("block h-auto w-30 sm:w-34", tone === "dark" && "w-44 sm:w-48")}
+      />
     </Link>
   );
 }
