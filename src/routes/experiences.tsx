@@ -10,7 +10,7 @@ export const Route = createFileRoute("/experiences")({
       { title: "Track Experiences | RC 9" },
       { name: "description", content: "RC Construction, RC Crawler, RC High Speed, RC Drift and a Racing Simulator Cockpit at RC 9. Five ways to race." },
       { property: "og:title", content: "Track Experiences | RC 9" },
-      { property: "og:description", content: "Re Construction, RC Crawler, RC High Speed, RC Drift and a Racing Simulator Cockpit at RC 9. Five ways to race." },
+      { property: "og:description", content: "RC Construction, RC Crawler, RC High Speed, RC Drift and a Racing Simulator Cockpit at RC 9. Five ways to race." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
