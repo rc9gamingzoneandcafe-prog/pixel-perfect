@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader, Section } from "@/components/rc/PageShell";
 import { FinalCta } from "@/components/rc/FinalCta";
-import { PriceList } from "@/components/rc/PriceList";
 import { Button } from "@/components/ui/button";
 import { experiences } from "@/data/site";
 
@@ -33,7 +32,6 @@ function ExperiencesPage() {
                 <h2 className="mt-4 text-5xl text-foreground">{e.name}</h2>
                 <p className="mt-4 text-lg text-muted-foreground">{e.description}</p>
                 <ul className="mt-6 space-y-2">{e.highlights.map((h) => <li key={h} className="flex gap-2 text-foreground"><span className="text-primary">▸</span>{h}</li>)}</ul>
-                <PriceList exp={e} className="mt-6 max-w-sm" />
                 <Button asChild variant="race" size="race" className="mt-6"><Link to="/book" search={{ experience: e.slug }}>Book {e.name}</Link></Button>
               </div>
             </article>

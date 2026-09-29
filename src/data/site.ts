@@ -25,9 +25,7 @@ export const site = {
   hours: [{ days: "Monday – Sunday", time: "11:00 AM – 11:00 PM" }],
   parking: "Free on-site parking for cars and two-wheelers.",
   social: {
-    instagram: "https://instagram.com",
-    facebook: "https://facebook.com",
-    youtube: "https://youtube.com",
+    instagram: "https://www.instagram.com/rc9gamingzoneandcafe/",
   },
 } as const;
 
@@ -67,7 +65,9 @@ import driftImg from "@/assets/exp-drift.jpg";
 import simulatorImg from "@/assets/exp-simulator.jpg";
 
 /** Shown wherever an experience has no published price yet. */
-export const PRICE_TBA = "Ask at venue";
+export const designer = { name: "Siri Sandela", url: "https://www.linkedin.com/in/siri-sandela" };
+
+export const PRICE_TBA = "Price to be updated";
 
 export const experiences: Experience[] = [
   {
