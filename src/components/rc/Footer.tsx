@@ -20,14 +20,14 @@ export function Footer() {
   return (
     <footer className="surface-ink">
       <div className="h-0.5 w-full racing-stripe" aria-hidden="true" />
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-12 pt-16 sm:px-6 lg:grid-cols-4 lg:pt-20">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 pb-8 pt-10 sm:px-6 lg:grid-cols-4 lg:pt-12">
         <div className="lg:col-span-2">
           <Logo tone="dark" />
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-muted">
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-muted">
             RC 9 is a premium RC racing venue and cafe. High-performance cars, purpose-built
             tracks and real competition — for racers of every level.
           </p>
-          <div className="mt-6 flex gap-3">
+          <div className="mt-4 flex gap-3">
             <a
               href={site.social.instagram}
               aria-label="Instagram"
@@ -42,7 +42,7 @@ export function Footer() {
 
         <div>
           <h3 className="text-sm tracking-[0.2em] text-ink-foreground">Explore</h3>
-          <ul className="mt-5 space-y-2.5">
+          <ul className="mt-4 space-y-2">
             {pages.map((p) => (
               <li key={p.to}>
                 <Link
@@ -58,7 +58,7 @@ export function Footer() {
 
         <div>
           <h3 className="text-sm tracking-[0.2em] text-ink-foreground">Contact</h3>
-          <ul className="mt-5 space-y-3 text-sm text-ink-muted">
+          <ul className="mt-4 space-y-2 text-sm text-ink-muted">
             <li>
               <a href={telLink} className="inline-flex items-center gap-2 hover:text-ink-foreground">
                 <Phone className="size-4 text-primary" /> {site.phone}
@@ -93,17 +93,17 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:pb-20 lg:flex lg:justify-end">
+      <div className="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:flex lg:justify-end lg:pb-8">
         <div className="w-full max-w-[400px]">
           <h3 className="text-sm tracking-[0.2em] text-ink-foreground">Find Us</h3>
-          <div className="mt-4">
+          <div className="mt-3">
             <LocationMap />
           </div>
         </div>
       </div>
 
       <div className="border-t border-ink-border">
-        <div className="mx-auto grid max-w-7xl gap-2 px-4 py-6 text-xs text-ink-muted sm:grid-cols-3 sm:items-center sm:px-6">
+        <div className="mx-auto grid max-w-7xl gap-2 px-4 py-4 text-xs text-ink-muted sm:grid-cols-3 sm:items-center sm:px-6">
           <span>© 2026 RC 9. All rights reserved.</span>
           <span className="text-center">
             Designed by{" "}
