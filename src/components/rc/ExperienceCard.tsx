@@ -12,8 +12,9 @@ export function ExperienceCard({ exp }: { exp: Experience }) {
           loading="lazy"
           width={1024}
           height={768}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="h-full w-full object-cover race-pan"
         />
+        <span aria-hidden className="absolute inset-0 race-streaks" />
         <span className="absolute left-0 top-0 h-1 w-0 racing-stripe transition-all duration-500 group-hover:w-full" />
       </div>
       <div className="flex flex-1 flex-col p-6">
