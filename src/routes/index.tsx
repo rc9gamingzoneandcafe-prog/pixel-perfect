@@ -11,6 +11,7 @@ import { Gallery } from "@/components/rc/Gallery";
 import { FinalCta } from "@/components/rc/FinalCta";
 import { AnimatedCounter } from "@/components/rc/AnimatedCounter";
 import { Reveal } from "@/components/rc/Reveal";
+import { RaceMatch } from "@/components/rc/RaceMatch";
 import { experiences, plans, stats, benefits, steps, occasions } from "@/data/site";
 
 export const Route = createFileRoute("/")({
@@ -46,6 +47,7 @@ function IndexPage() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {experiences.map((e) => <ExperienceCard key={e.slug} exp={e} />)}
         </div>
+        <div className="mt-14"><RaceMatch /></div>
       </Section>
       <Section tone="muted">
         <SectionHeading eyebrow="Why RC 9" title="Built for real racing" />
